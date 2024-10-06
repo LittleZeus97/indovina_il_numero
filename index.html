@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndovunaIlNumero</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let casualNumber=0;
+        let utentIn=0;
+        let tentativi=0;
+        let giusto=true;
+        
+        
+        function generateRandomIntger(min, max){
+            let n=Math.random()*100
+            return n;
+            
+        }
+        casualNumber=generateRandomIntger();
+
+        alert("ciao e benvenuta/o in questo gioco!!")
+        alert("dovrai indovinare un numero da 0 a 100...")
+        alert("avrai solo 5 tentativi!")
+        alert("buona fortuna!!!")
+        
+        while(tentativi<5){
+                utentIn=prompt("tenta un numero:");
+                tentativi=tentativi+1;
+                if(utentIn>casualNumber){
+                    alert("troppo grande!!")
+                }
+                if(utentIn<casualNumber){
+                    alert("troppo piccolo!!")
+                }
+                if(utentIn===casualNumber){
+                    alert("bravo!! hai vinto!!!")
+                }
+        }
+       
+        alert("grazie per aver giocato al nostro gioco!!")
+    </script>
+</body>
+</html>
