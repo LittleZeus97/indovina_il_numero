@@ -6,7 +6,10 @@
     <title>IndovunaIlNumero</title>
 </head>
 <body>
-    
+
+    <h3>indovina il  numero!!</h3>
+    <input type="number" id="number">
+    <button type="submit" id="submitButton">Submit</button>
 
 
     <script>
@@ -18,6 +21,7 @@
         
         function generateRandomIntger(min, max){
             let n=Math.random()*100
+            
             return n;
             
         }
@@ -29,20 +33,24 @@
         alert("buona fortuna!!!")
         
         while(tentativi<5){
-                utentIn=prompt("tenta un numero:");
+                utentIn = document.querySelector(".button");
                 tentativi=tentativi+1;
-                if(utentIn>casualNumber){
-                    alert("troppo grande!!")
-                }
-                if(utentIn<casualNumber){
-                    alert("troppo piccolo!!")
-                }
-                if(utentIn===casualNumber){
-                    alert("bravo!! hai vinto!!!")
-                }
+                document.querySelector(".submitButton").addEventListener("click", 
+                    if(utentIn > casualNumber){
+                        console.log("troppo grande!!")
+                    }
+                    if(utentIn<casualNumber){
+                        console.log("troppo piccolo!!")
+                    }
+                    if(utentIn ===casualNumber){
+                        console.log("bravo!! hai vinto!!!")
+                    }
+                );
+
+                
         }
        
-        alert("grazie per aver giocato al nostro gioco!!")
+        console.log("grazie per aver giocato al nostro gioco!!")
     </script>
 </body>
 </html>
