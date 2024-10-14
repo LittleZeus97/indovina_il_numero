@@ -8,8 +8,8 @@
 <body>
 
     <h3>indovina il  numero!!</h3>
-    <input type="number" id="number">
-    <button type="submit" id="submitButton">Submit</button>
+    <input type="number" id="number" name="button">
+    <button type="submit" id="submitButton" name="submit">Submit</button>
 
 
     <script>
@@ -32,24 +32,23 @@
         alert("avrai solo 5 tentativi!")
         alert("buona fortuna!!!")
         
-        while(tentativi<5){
-                utentIn = document.querySelector(".button");
-                tentativi=tentativi+1;
-                document.querySelector(".submitButton").addEventListener("click", 
-                    if(utentIn > casualNumber){
-                        console.log("troppo grande!!")
-                    }
-                    if(utentIn<casualNumber){
-                        console.log("troppo piccolo!!")
-                    }
-                    if(utentIn ===casualNumber){
-                        console.log("bravo!! hai vinto!!!")
-                    }
-                );
-
+        let button=document.querySelector("#submitButton")
+        button.addEventListener("click", function(event) {
+            let numero= document.querySelector("#number")
+            let numberIn =parseInt(numero.value)
+            if(utentIn > casualNumber){
+                alert("troppo grande!!")
+            }else if(utentIn<casualNumber){
+                alert("troppo piccolo!!")
+            }else if(utentIn ===casualNumber){
+                alert("bravo!! hai vinto!!!")
+            }
                 
-        }
-       
+                
+        })
+
+
+                    
         console.log("grazie per aver giocato al nostro gioco!!")
     </script>
 </body>
