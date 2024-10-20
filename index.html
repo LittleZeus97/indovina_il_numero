@@ -3,14 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/index.css">
     <title>IndovunaIlNumero</title>
 </head>
 <body>
 
-    <h3>indovina il  numero!!</h3>
-    <input type="number" id="number" name="button">
-    <button type="submit" id="submitButton" name="submit">Submit</button>
+    <div class="container">
+        <h1 class="title">INDOVINA IL NUMERO</h1>
+        <div class="list">
+            <ol>
+                <li>Il computer sceglierà segretamente un numero intero casuale tra 1 e 100.</li>              
+                <li>Il tuo obiettivo è indovinare questo numero segreto nel minor numero di tentativi possibile.</li>   
+                <li>Ad ogni tentativo, inserisci un numero e il computer ti darà un</li>               
+                    <ul>
+                        <li>Se il tuo numero è troppo basso, ti dirà "Troppo basso, prova un numero più alto!"</li>
+                        <li>Se il tuo numero è troppo alto, ti dirà "Troppo alto, prova un numero più basso!"</li>
+                        <li>Se indovini il numero esatto, vincerai la partita!</li>
+                    </ul>
+                </li>
+                <li>Continua a fare tentativi finché non indovini il numero </li>  
+                <li> Alla fine del gioco, ti verrà mostrato il numero di tentativi che hai impiegato per indovinare.</li>
+                <li>Sfida te stesso a indovinare il numero con il minor numero di tentativi possibile!</li>
+            </ol>
+        </div>
+        <p class="p">inserisci il numero magico</p>
+        <input type="number" id="button" name="button">
+        <button type="submit" id="submitButton" name="submit">INDOVINA</button> 
 
+        <div id="num_alto_basso"> 
+            numero <strong>troppo basso</strong>
+        </div>
+
+        <div id="n_tentativi">
+            hai ancora <strong>5</strong> tentativi
+        </div>
+        
+    </div>
+    
 
     <script>
         let casualNumber=0;
@@ -27,27 +56,25 @@
         }
         casualNumber=generateRandomIntger();
 
-        alert("ciao e benvenuta/o in questo gioco!!")
-        alert("dovrai indovinare un numero da 0 a 100...")
-        alert("avrai solo 5 tentativi!")
-        alert("buona fortuna!!!")
+       
         
         let button=document.querySelector("#submitButton")
         button.addEventListener("click", function(event) {
             let numero= document.querySelector("#number")
             let numberIn =parseInt(numero.value)
             if(utentIn > casualNumber){
-                alert("troppo grande!!")
+                document.querySelector("#num_alto_basso").innerHTML="numero troppo grande"
             }else if(utentIn<casualNumber){
-                alert("troppo piccolo!!")
+                document.querySelector("#num_alto_basso").innerHTML="numero troppo piccolo"
             }else if(utentIn ===casualNumber){
-                alert("bravo!! hai vinto!!!")
+                document.querySelector("#num_alto_basso").innerHTML="numero esatto"
             }
                 
                 
         })
 
-
+        document.querySelector("#n_tentativi").innerHTML="hai ancora " + tentativi + " tentativi"
+       
                     
         console.log("grazie per aver giocato al nostro gioco!!")
     </script>

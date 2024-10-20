@@ -1,6 +1,83 @@
-.button {
-    background-color: blue;
-    margin: 1rem 0;
-    height: 100px;
-    width: 200px;
-  }
+body{
+  background-color: #CCFFC5;
+}
+
+.title{
+  flex-direction: column;
+  text-align: center;
+  font-style: bold;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-size:50px;
+  margin-top: 60px;
+}
+
+.list{
+  line-height: 35px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-size: 16px;
+  padding-left: 590px;
+  padding-right:  570px;
+  padding-top: 48px;
+  padding-bottom: 80px;
+  list-style-position: inside;
+
+}
+
+.p{
+  text-align: center;
+  font-size: 16px;
+}
+
+#button {
+  background-color: #ffffff;
+  height: 60px;
+  width: 350px;
+  border-radius: 5px;
+  margin-left: 765px;
+  margin-right: 760px;
+  margin-bottom: 40px;
+}
+
+#submitButton{
+  background-color: #3AE3A8;
+  height: 60px;
+  width: 350px;
+  font-style: bold;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-size:24px;
+  border-radius: 5px;
+  align-items: center;
+  margin-left: 765px;
+  margin-right: 760px;
+  margin-bottom: 50px;
+}
+
+
+#submitButton:hover{
+  border-color: rgb(0, 60, 255);
+  border: solid;
+  border-width: 5px;
+}
+
+#num_alto_basso{
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+#n_tentativi{
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-size: 16px;
+}
