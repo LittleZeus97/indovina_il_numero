@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/index.css">
     <title>IndovunaIlNumero</title>
+
+    <style>
+        
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+
+    </style>
 </head>
 <body>
 
@@ -31,52 +43,67 @@
         <button type="submit" id="submitButton" name="submit">INDOVINA</button> 
 
         <div id="num_alto_basso"> 
-            numero <strong>troppo basso</strong>
+            numero troppo basso
         </div>
 
         <div id="n_tentativi">
-            hai ancora <strong>5</strong> tentativi
+            hai ancora 5 tentativi
         </div>
         
     </div>
     
 
     <script>
+
+        
         let casualNumber=0;
         let utentIn=0;
-        let tentativi=0;
+        let tentativi=5;
         let giusto=true;
         
         
         function generateRandomIntger(min, max){
             let n=Math.random()*100
-            
             return n;
-            
         }
         casualNumber=generateRandomIntger();
 
-       
-        
-        let button=document.querySelector("#submitButton")
-        button.addEventListener("click", function(event) {
-            let numero= document.querySelector("#number")
-            let numberIn =parseInt(numero.value)
-            if(utentIn > casualNumber){
-                document.querySelector("#num_alto_basso").innerHTML="numero troppo grande"
-            }else if(utentIn<casualNumber){
-                document.querySelector("#num_alto_basso").innerHTML="numero troppo piccolo"
-            }else if(utentIn ===casualNumber){
-                document.querySelector("#num_alto_basso").innerHTML="numero esatto"
-            }
-                
-                
-        })
+      
+        if (tentativi===0){
+            console.log("hai terminato i tentativi")
+        }else{      
+            let button=document.querySelector("#submitButton")
+            button.addEventListener("click", function(event) {
+                let numero= document.querySelector("#button")
+                let numberIn = numero.value
+                        
+                if(numberIn > casualNumber){
+                    console.log("numero troppo grande")
+                    document.querySelector("#num_alto_basso").innerHTML="numero troppo grande"
+                    tentativi=tentativi-1
+                    document.querySelector("#n_tentativi").innerHTML="hai "+ tentativi +" tentativi rimanenti"
+                }else if(numberIn<casualNumber){
+                    console.log("numero troppo piccolo")
+                    document.querySelector("#num_alto_basso").innerHTML="numero troppo piccolo"
+                    tentativi=tentativi-1
+                    document.querySelector("#n_tentativi").innerHTML="hai "+ tentativi +" tentativi rimanenti"
+                }else if(numberIn ===casualNumber){
+                    console.log("numero esatto")
+                    document.querySelector("#num_alto_basso").innerHTML="numero esatto"
+                    tentativi=tentativi-1
+                    document.querySelector("#n_tentativi").innerHTML="hai "+ tentativi +" tentativi rimanenti"
+                }
+                            
+            })
 
-        document.querySelector("#n_tentativi").innerHTML="hai ancora " + tentativi + " tentativi"
-       
-                    
-        console.log("grazie per aver giocato al nostro gioco!!")
+            document.querySelector("#n_tentativi").innerHTML="hai ancora " + tentativi + " tentativi"
+                            
+            console.log("grazie per aver giocato al nostro gioco!!")
+                
+
+        }
+        
+        
     </script>
 </body>
 </html>
