@@ -6,17 +6,7 @@
     <link rel="stylesheet" href="static/css/index.css">
     <title>IndovunaIlNumero</title>
 
-    <style>
-        
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
-
-
-    </style>
+    
 </head>
 <body>
 
@@ -60,6 +50,7 @@
         let utentIn=0;
         let tentativi=5;
         let giusto=true;
+        fine=false;
         
         
         function generateRandomIntger(min, max){
@@ -68,6 +59,9 @@
         }
         casualNumber=generateRandomIntger();
 
+ 
+       
+        
       
         if (tentativi===0){
             console.log("hai terminato i tentativi")
@@ -77,23 +71,40 @@
                 let numero= document.querySelector("#button")
                 let numberIn = numero.value
                         
+           
+
                 if(numberIn > casualNumber){
                     console.log("numero troppo grande")
                     document.querySelector("#num_alto_basso").innerHTML="numero troppo grande"
                     tentativi=tentativi-1
                     document.querySelector("#n_tentativi").innerHTML="hai "+ tentativi +" tentativi rimanenti"
+                    if(tentativi===3){
+                        document.body.classList.add("yellow")
+                    }else if(tentativi===2){
+                        document.body.classList.add("red")
+                    }
                 }else if(numberIn<casualNumber){
                     console.log("numero troppo piccolo")
                     document.querySelector("#num_alto_basso").innerHTML="numero troppo piccolo"
                     tentativi=tentativi-1
                     document.querySelector("#n_tentativi").innerHTML="hai "+ tentativi +" tentativi rimanenti"
+                    if(tentativi===3){
+                        document.body.classList.add("yellow")
+                    }else if(tentativi<=2){
+                        document.body.classList.add("red")
+                    }
                 }else if(numberIn ===casualNumber){
                     console.log("numero esatto")
                     document.querySelector("#num_alto_basso").innerHTML="numero esatto"
                     tentativi=tentativi-1
                     document.querySelector("#n_tentativi").innerHTML="hai "+ tentativi +" tentativi rimanenti"
+                    if(tentativi===3){
+                        document.body.classList.add("yellow")
+                    }else if(tentativi<=2){
+                        document.body.classList.add("red")
+                    }
                 }
-                            
+                fine=false          
             })
 
             document.querySelector("#n_tentativi").innerHTML="hai ancora " + tentativi + " tentativi"
