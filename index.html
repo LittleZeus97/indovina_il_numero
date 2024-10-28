@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="static/css/index.css">
     <title>IndovunaIlNumero</title>
 
-    
 </head>
 <body>
 
@@ -58,13 +57,12 @@
             return n;
         }
         casualNumber=generateRandomIntger();
-
- 
-       
         
       
         if (tentativi===0){
             console.log("hai terminato i tentativi")
+            button.classList.add("disabled")
+            button.disabled=true
         }else{      
             let button=document.querySelector("#submitButton")
             button.addEventListener("click", function(event) {
